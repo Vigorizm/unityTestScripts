@@ -1,0 +1,20 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class GameManager : MonoBehaviour
+{
+    public Transform player;
+
+    void Update()
+    {
+        if (player.position.y < -5f)
+        {
+            RestartGame();
+        }
+    }
+
+    void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+}
